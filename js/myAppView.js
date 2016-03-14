@@ -20,7 +20,7 @@
         getViewOpener: function () {
             var openerWindow = window.opener;
             var parentWindow = window.parent;
-            return new myAppView(parentWindow);
+            return new myAppView(openerWindow);
         }
 
     });
