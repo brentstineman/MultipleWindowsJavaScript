@@ -89,8 +89,7 @@
     // A placeholder title used when the user clears the title of the view
     var emptyTitle = "<title cleared>";
 
-    var app = WinJS.Application;
-    
+       
     WinJS.Namespace.define("SecondaryViewsHelper", {
         // Store the app's domain. It's necessary to validate the origin of messages received
         // from postMessage. See http://go.microsoft.com/fwlink/?LinkID=247104 for more details
@@ -155,7 +154,9 @@
                 // Create a new view. The specified page will be loaded inside the view, but the view
                 // will not be shown yet. You'll need to use the ApplicationViewSwitcher or ProjectionManager
                 // APIs to show the view
-                var newView = MSApp.createNewView(page);
+                //var newView = MSApp.createNewView(page);
+                //BMS
+                var newView = CustomAppView.createNewView(page);
 
                 // The secondary view may need to load a particular document or piece of content. You can
                 // tell the secondary view what to load by posting a message to it.
@@ -255,7 +256,9 @@
         // main view if the main view was about to interact with the secondary view. If so, then the view should delay closing
         // itself. This object encapsulates the secondary view's portion of that interaction
         ViewLifetimeControl: WinJS.Class.mix(WinJS.Class.define(function () {
-            this.opener = MSApp.getViewOpener();
+            //this.opener = MSApp.getViewOpener();
+            //BMS
+            this.opener = CustomAppView.getViewOpener();
             this._handleMessageWrapper = this._handleMessage.bind(this);
             this._onConsolidatedWrapper = this._onConsolidated.bind(this)
             this._onVisibilityChangeWrapper = this._onVisibilityChange.bind(this);

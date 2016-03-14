@@ -85,6 +85,7 @@
     <Content Include="images\windows-sdk.png" />
     <Content Include="js\default.js" />
     <Content Include="css\default.css" />
+    <Content Include="js\myAppView.js" />
     <Content Include="js\scenario1.js" />
     <Content Include="js\scenario2.js" />
     <Content Include="js\scenario3.js" />
